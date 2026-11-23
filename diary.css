@@ -1,0 +1,42 @@
+/* Mission diary: narrative passages alternate with recorded telemetry. */
+.cycle-record.mission-diary { max-width:980px; margin-inline:auto; }
+.mission-diary > .kicker,.mission-diary > h1 { max-width:720px; margin-inline:auto; }
+.mission-diary .trace-header { max-width:720px; margin:28px auto 35px; padding:22px 0; border-top:1px solid #43606e; border-bottom:1px solid #29424e; }
+.mission-diary .trace-header h2 { border:0; padding:0; margin:0 0 12px; font-size:20px; line-height:1.4; }
+.mission-diary .trace-header strong { font-weight:500; }
+.mission-diary .trace-header p { color:#91afbd; line-height:1.8; margin:0; font-size:13px; }
+.trace-narrative { max-width:720px; margin:26px auto; }
+.article .trace-narrative p { font-size:15px; line-height:1.85; margin:0 0 24px; color:#c7d6dc; }
+.mission-diary .trace-event { max-width:720px; margin:30px auto; padding:17px 20px; border:1px solid #29434f; border-left:2px solid #7cabbc; border-radius:0 6px 6px 0; background:linear-gradient(110deg,#15263099,#0a141a); }
+.mission-diary .trace-event h2 { margin:0; padding:0; border:0; color:#9cc2d2; font-size:11px; line-height:1.7; letter-spacing:.06em; }
+.mission-diary .trace-event p { color:#aebfc9; font-size:13px; line-height:1.75; margin:12px 0 0; }
+.mission-diary .trace-anomaly { border-left-color:#d38a74; background:linear-gradient(110deg,#35232299,#0a141a); }
+.mission-diary .trace-anomaly h2 { color:#e0a18e; }
+.trace-closing-image { margin:44px 0 0; padding:0; overflow:hidden; border:1px solid #3c515c; border-radius:8px; background:#05090b; }
+.trace-closing-image img { width:100%; height:auto; display:block; }
+@media(min-width:960px) { .article .trace-narrative p { font-size:17px; }.mission-diary .trace-header { margin-top:35px; }.mission-diary .trace-header h2 { font-size:24px; }.mission-diary .trace-event { padding:20px 25px; }.mission-diary .trace-event h2 { font-size:12px; }.mission-diary .trace-event p { font-size:14px; }.trace-closing-image { margin-top:55px; } }
+
+/* Speech alone uses italics; system metadata and telemetry use upright monospace. */
+.mission-diary .trace-header p,
+.mission-diary .trace-event h2,
+.mission-diary .trace-event .trace-telemetry {
+  font-family: Consolas, "Courier New", monospace;
+  font-style: normal;
+}
+.mission-diary .trace-event .trace-telemetry { overflow-wrap: anywhere; }
+.mission-diary .trace-dialogue { font-style: italic; }
+
+/* Published mission records use the shared green/coral visual identity. */
+.mission-diary > h1{font-family:Chakra,sans-serif;font-size:clamp(26px,4vw,36px);line-height:1.2;color:#cefbac}
+.mission-diary .trace-header{border-color:var(--line);margin-top:24px}
+.mission-diary .trace-header p{font-family:'Roboto Mono',monospace;font-size:12px;color:var(--muted)}
+.mission-diary .trace-event{border-radius:0;border-color:var(--line);border-left-color:var(--accent);background:#101f15}
+.mission-diary .trace-event h2{font-family:'Roboto Mono',monospace;color:var(--accent);font-weight:400;overflow-wrap:anywhere}
+.mission-diary .trace-anomaly{border-left-color:var(--signal);background:#241b13}
+.mission-diary .trace-anomaly h2{color:var(--signal)}
+.article .trace-narrative p{color:var(--text)}
+.article .trace-narrative .trace-dialogue{color:#cefbac}
+.mission-diary .trace-decision h2{color:#cefbac}
+.mission-diary .trace-event p{font-size:16px;line-height:1.85}
+.mission-diary .trace-event .trace-dialogue{color:#cefbac}
+.log-return{max-width:720px;margin:36px auto 0;border-top:1px solid var(--line);padding-top:20px;font-family:'Roboto Mono',monospace;font-size:12px}

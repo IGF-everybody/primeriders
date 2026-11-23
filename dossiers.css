@@ -1,0 +1,58 @@
+/* Ship systems, evolving dossiers and illustrated mission records. */
+.ship-systems { margin-top:36px; padding-top:12px; border-top:1px solid #3c5662; }
+.systems-heading { display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:16px; margin:10px 0 22px; }
+.article .systems-heading h2 { border:0; margin:0; padding:0; font-size:23px; }
+.status-legend,.structure-legend { display:flex; flex-wrap:wrap; gap:8px; }
+.status-chip,.discovery-badge { display:inline-flex; align-items:center; width:fit-content; max-width:100%; font-size:10px; line-height:1.4; letter-spacing:.045em; padding:5px 8px; border:1px solid currentColor; border-radius:4px; }
+.status-stable { color:#98cbb8; background:#142b2544; }
+.status-damaged { color:#e4b970; background:#3a2b1544; }
+.status-critical { color:#ef9188; background:#3b1c2144; }
+.status-unconfirmed { color:#819eaa; }
+.systems-deck { display:grid; grid-template-columns:minmax(0,1fr); gap:14px; }
+.system-card { min-width:0; position:relative; padding:22px; border:1px solid #36544f; border-top:2px solid #82b7a4; border-radius:7px; background:linear-gradient(130deg,#102027,#081218); }
+.system-damaged { border-color:#70603d; border-top-color:#dbaf65; }
+.system-critical { border-color:#72423e; border-top-color:#eb8f83; }
+.system-status { color:#72929f; font-size:10px; text-transform:uppercase; letter-spacing:.1em; margin-bottom:7px; }
+.system-card h3 { color:#dce9ee; font-size:21px; font-weight:400; margin:23px 0 10px; }
+.article .system-card p { margin:0; font-size:13px; line-height:1.65; color:#98b1bd; }
+.ship-layout .article-image { align-self:center; }
+.field-notes { max-width:800px; margin:38px auto 0; border-top:1px solid #44616e; padding-top:22px; }
+.field-notes-heading { display:flex; align-items:baseline; justify-content:space-between; flex-wrap:wrap; gap:10px; margin-bottom:24px; }
+.article .field-notes-heading h2 { margin:0; padding:0; border:0; font-size:25px; text-transform:none; letter-spacing:.015em; }
+.field-notes-updated { font-size:11px; color:#7799a9; }
+.field-notes-updated a { color:#a9c9d9; border-bottom:1px dotted #577786; }
+.article.field-notes > p { font-size:15px; line-height:1.85; margin:0 0 22px; color:#becfd7; }
+.field-notes .glossary-link { border-bottom:1px dotted #a66f5d; }
+.structure-legend { margin:0 0 22px; }
+.discovery-discovered { color:#a3cbbf; background:#152c2644; }
+.discovery-to-explore { color:#e3bc82; background:#342b1d44; border-style:dashed; }
+.discovery-unconfirmed { color:#88a0aa; }
+.structure-card-heading { display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:12px; margin-bottom:16px; }
+.structure-card-heading .code { margin:0; }
+.card.structure-discovered { border-left:3px solid #85b4a2; }
+.card.structure-to-explore { border:1px dashed #9b8057; border-left:3px solid #d3ab6e; background:linear-gradient(120deg,#211d16,#091116); }
+.page-log .record-group { max-width:none; }
+[data-catalog-list="logs"] { display:grid; grid-template-columns:minmax(0,1fr); gap:16px; }
+.page-log .archive-entry.log-preview-card { display:grid; grid-template-columns:40% minmax(0,1fr); padding:0; margin:0; min-height:112px; overflow:hidden; background:#09151c; }
+.log-preview-image { position:relative; min-width:0; overflow:hidden; background:radial-gradient(ellipse,#223b45,#071017); aspect-ratio:1; }
+.log-preview-image img { width:100%; height:100%; display:block; object-fit:cover; object-position:center; }
+.log-preview-caption { padding:18px 26px 18px 15px; align-self:center; }
+.page-log .log-preview-caption h3 { margin:0; font-size:19px; }
+.page-log .log-preview-card:after { right:14px; top:50%; margin-top:-4px; }
+.log-preview-placeholder { position:absolute; inset:0; display:grid; place-items:center; text-align:center; color:#7695a3; font-size:10px; letter-spacing:.1em; padding:12px; }
+@media(min-width:600px) { .systems-deck { grid-template-columns:repeat(2,minmax(0,1fr)); }.system-card { padding:25px; } }
+@media(min-width:700px) { [data-catalog-list="logs"] { grid-template-columns:repeat(2,minmax(0,1fr)); }.page-log .archive-entry.log-preview-card { display:block; }.log-preview-image { aspect-ratio:16/9; }.log-preview-caption { padding:20px; }.page-log .log-preview-caption h3 { font-size:23px; }.page-log .log-preview-card:after { top:auto; bottom:28px; right:22px; margin:0; } }
+@media(min-width:960px) { .systems-deck { grid-template-columns:repeat(3,minmax(0,1fr)); }.system-card { min-height:220px; }.field-notes { margin-top:48px; padding-top:28px; }.article.field-notes > p { font-size:17px; }.page-primer .ship-layout { grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr); }.page-log .record-group { padding:24px; } }
+@media(min-width:960px) { .systems-deck .system-card:last-child:nth-child(3n+2) { grid-column:span 2; } }
+
+/* Structure previews follow discovery state; unexplored records conceal imagery. */
+.page-structures .card.structure-card { padding:0; overflow:hidden; }
+.structure-preview { position:relative; width:100%; aspect-ratio:16/9; overflow:hidden; background:#071016; border-bottom:1px solid #2e4651; }
+.structure-preview img { display:block; width:100%; height:100%; object-fit:cover; object-position:center; }
+.structure-card-body { padding:20px; }
+.structure-preview-placeholder { position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:12px; background:radial-gradient(ellipse at center,#28303a66,transparent 70%),repeating-linear-gradient(135deg,#ffffff03 0,#ffffff03 1px,transparent 1px,transparent 16px); color:#809aa7; }
+.structure-to-explore .structure-preview { background:#15140f; border-bottom:1px dashed #75603e; }
+.structure-to-explore .structure-preview-placeholder { color:#d8b176; }
+.structure-preview-symbol { display:grid; place-items:center; width:66px; height:66px; border:1px dashed currentColor; border-radius:50%; font-size:36px; font-weight:300; line-height:1; }
+.structure-preview-label { font-size:10px; text-transform:uppercase; letter-spacing:.16em; }
+@media(min-width:960px) { .structure-card-body { padding:26px; }.structure-preview-symbol { width:78px; height:78px; font-size:42px; } }

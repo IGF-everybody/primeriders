@@ -1,0 +1,177 @@
+/* English edition: fluid mobile, tablet and desktop layouts. */
+:root { --max: 1200px; }
+body { padding: 0; }
+.site-header, main, .footer { width: min(100%, var(--max)); }
+.site-header { border-radius: 0; }
+.header-inner { padding: 18px var(--gutter) 12px; }
+.brand-row { display: grid; grid-template-columns: minmax(0,1fr) auto; align-items: center; gap: 12px; }
+.brand { display: contents; }
+.brand strong { grid-column: 1 / -1; white-space: nowrap; font-size: clamp(13px, 4.3vw, 20px); letter-spacing: .035em; }
+.brand .brand-sub { margin: 0; font-size: 10px; }
+.header-tools { grid-column: 2; grid-row: 2; }
+.desktop-nav { display: none; }
+.home-dashboard { position: relative; }
+.current-cycle em, .article em { font-style: italic; }
+.entity-detail { min-width: 0; }
+.category-tabs button { appearance: none; cursor: pointer; font: inherit; text-align: center; padding: 13px 8px; border: 1px solid var(--line); border-radius: 7px; text-transform: uppercase; font-size: 11px; letter-spacing: .07em; color: #a8cfe0; background: #0a151b; }
+.category-tabs button[aria-selected="true"] { border-color: #a65147; background: linear-gradient(135deg,#54272088,#120f13); color: #ef917c; }
+.category-tabs button:focus-visible { outline: 2px solid #b5dce9; outline-offset: 4px; }
+.entity-group:target { border-color: var(--line); }
+.thumb-card { grid-template-columns: 33% minmax(0,1fr); gap: 12px; align-items: stretch; }
+.thumb-card .thumb, .thumb-card.galacto .thumb { aspect-ratio: auto; min-height: 240px; height: 100%; }
+.thumb-card .thumb { background-position: 50% 18%; }
+.thumb-card.galacto .thumb { background-size: auto 125%; background-position: 18% top; }
+.entity-summary { align-self: center; min-width: 0; padding: 20px 4px 12px 0; }
+.entity-summary h3 { font-size: 21px; margin-bottom: 12px; }
+.summary-table { border-collapse: collapse; width: 100%; table-layout: fixed; font-size: 11px; }
+.summary-table th, .summary-table td { padding: 8px 3px; text-align: left; vertical-align: top; border-top: 1px solid #263d47; overflow-wrap: anywhere; line-height: 1.35; }
+.summary-table th { color: #94b0be; font-weight: 400; width: 43%; }
+.summary-table td { color: #dbe8ed; }
+.character-quote { margin: 28px 0 0; padding: 20px 0 0; border-top: 1px solid var(--line); }
+.character-quote p { font-style: italic; color: #aec8d5; }
+.character-quote cite { display: block; margin-top: 8px; color: var(--signal); font-size: 13px; font-style: normal; }
+.archive-entry { min-height: 68px; display: flex; align-items: center; }
+.archive-entry h3 { margin: 0; font-size: 19px; letter-spacing: .04em; }
+.archive-entry:after { top: 28px; }
+.cycle-record > p { margin: 24px 0; }
+.ship-copy .system-grid { margin-top: 20px; }
+.ship-layout .article-image { margin-left: 0; margin-right: 0; }
+.primer-intro p:first-child { margin-top: 0; }
+.glossary-entry { min-width: 0; }
+.glossary-entry h2 { overflow-wrap: anywhere; }
+.map-layout { min-width: 0; }
+[hidden] { display: none !important; }
+
+@media (min-width: 600px) {
+  :root { --gutter: 30px; }
+  .home-hero { aspect-ratio: 3.2; }
+  .home-links { grid-template-columns: repeat(2,minmax(0,1fr)); }
+  .home-links .card { min-height: 95px; }
+  .entity-group { padding: 20px; }
+  .thumb-card { grid-template-columns: 210px minmax(0,1fr); padding: 10px; gap: 25px; }
+  .thumb-card .thumb, .thumb-card.galacto .thumb { min-height: 320px; }
+  .entity-summary { padding-right: 20px; }
+  .summary-table { font-size: 14px; }
+  .summary-table th, .summary-table td { padding: 12px 6px; }
+  .entity-summary h3 { font-size: 27px; }
+  .category-tabs { max-width: 500px; }
+  .category-tabs button { font-size: 13px; }
+  .primer-banner { aspect-ratio: 3; }
+  .page-structures main > .grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
+  .glossary-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 25px 35px; }
+  .glossary-entry { padding: 20px; border: 1px solid var(--line); border-radius: 8px; background: #09151a; }
+  .glossary-entry:first-of-type { padding-top: 20px; }
+  .glossary-search { max-width: 500px; margin-bottom: 26px; }
+  .page-mappa main:before { content: none; }
+  .map-panel { margin: 22px 0 0; border: 1px solid var(--line); border-radius: 10px; overflow: hidden; }
+  .map-stage.galaxy-bg { background: linear-gradient(#07101633,#070e1255),linear-gradient(transparent,transparent) center/cover no-repeat; aspect-ratio: 1.3; max-height: none; }
+  .known-zones { margin-top: 20px; }
+  .entity-hero { max-width: 550px; }
+  .entity-wide { max-width: 500px; }
+}
+
+@media (min-width: 960px) {
+  :root { --gutter: 40px; }
+  body { padding: 24px; }
+  .site-header { border-radius: 16px 16px 0 0; }
+  .header-inner { padding: 24px var(--gutter) 0; }
+  .brand-row { display: flex; }
+  .brand { display: block; }
+  .brand strong { font-size: 24px; letter-spacing: .055em; }
+  .brand .brand-sub { font-size: 11px; margin-top: 8px; }
+  .header-tools .menu-drawer { display: none; }
+  .desktop-nav { display: flex; flex-wrap: wrap; gap: 8px 28px; margin-top: 24px; padding: 13px 0; border-top: 1px solid #233a45; }
+  .desktop-nav a { font-size: 13px; color: #9bb7c5; padding: 5px 0; border-bottom: 2px solid transparent; }
+  .desktop-nav a:hover, .desktop-nav a.active { color: #f1a08e; border-color: #bd7463; }
+  main { min-height: calc(100svh - 248px); padding-top: 32px; padding-bottom: 44px; }
+  .page-heading { margin-bottom: 30px; }
+  .page-heading h1, .article h1 { font-size: 36px; }
+  .page-heading > span { font-size: 16px; }
+  .article p, .article li { font-size: 16px; line-height: 1.65; }
+  .article h2 { font-size: 21px; }
+  .footer { font-size: 10px; padding: 18px var(--gutter); }
+  .home-hero { aspect-ratio: auto; height: 280px; margin-bottom: -40px; background-position: center 35%; }
+  .home-dashboard { display: grid; grid-template-columns: minmax(0,1.04fr) minmax(0,1fr); gap: 28px; align-items: start; }
+  .current-cycle { padding: 28px; }
+  .current-cycle .cycle-title { font-size: 28px; }
+  .current-cycle p { font-size: 15px; line-height: 1.65; margin-top: 14px; }
+  .current-cycle .metrics-compact { margin-top: 24px; padding-top: 20px; }
+  .metric-mini b { font-size: 24px; }
+  .metric-mini span { font-size: 10px; max-width: 90px; }
+  .home-links { margin: 0; gap: 14px; }
+  .home-links .card { min-height: 132px; grid-template-columns: 40px minmax(0,1fr); gap: 12px; padding-right: 16px; background: #0a151bf5; }
+  .nav-icon { padding: 10px; }
+  .nav-icon svg { width: 24px; height: 24px; }
+  .home-links .card:after { right: 10px; top: 14px; width: 6px; height: 6px; }
+  .home-links h3 { font-size: 18px; }
+  .home-links p { font-size: 12px; padding-right: 0; }
+  .primer-banner { aspect-ratio: auto; height: 320px; margin-bottom: 32px; padding-bottom: 30px; background-position: center 40%; }
+  .primer-reading { display: grid; grid-template-columns: minmax(0,.9fr) minmax(0,1.1fr); gap: 55px; }
+  .primer-mission h2 { margin-top: 0; }
+  .primer-intro { padding-top: 18px; }
+  .ship-section { margin-top: 40px; }
+  .ship-layout { display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1fr); gap: 35px; align-items: start; }
+  .ship-layout .article-image { margin-top: 10px; padding: 14px; }
+  .article-image figcaption { font-size: 11px; }
+  .system-item { font-size: 13px; padding: 12px; }
+  .system-item strong { font-size: 12px; }
+  .page-primer .link-list { grid-template-columns: repeat(3,minmax(0,1fr)); }
+  .entity-detail { display: grid; grid-template-columns: minmax(0,.85fr) minmax(0,1.15fr); gap: 40px; align-items: start; }
+  .entity-hero, .entity-wide { margin: 0; width: 100%; max-width: none; }
+  .entity-detail .info-row { padding: 12px 0; }
+  .entity-detail .info-row span { font-size: 15px; }
+  .entity-detail .article h1 { font-size: 38px; margin-bottom: 18px; }
+  .entity-group .grid { grid-template-columns: repeat(auto-fit,minmax(min(100%,470px),1fr)); }
+  .entity-group .section-title { margin-bottom: 20px; }
+  .entity-group .section-title h2 { font-size: 21px; }
+  .entity-group .section-title span { font-size: 14px; }
+  .map-layout { display: grid; grid-template-columns: minmax(0,1.8fr) minmax(260px,1fr); gap: 28px; align-items: start; margin-top: 28px; }
+  .map-panel, .known-zones { margin: 0; }
+  .map-stage.galaxy-bg { aspect-ratio: 1.15; }
+  .known-zones { padding: 22px; }
+  .known-zones .section-title h2 { font-size: 19px; }
+  .known-zones .card { padding-top: 18px; padding-bottom: 18px; }
+  .known-zones h3 { font-size: 16px; }
+  .known-zones p { font-size: 13px; margin-top: 5px; }
+  .known-zones .card:before { top: 19px; }
+  .zone .label { font-size: 12px; }
+  .page-log .record-group { max-width: 860px; padding: 24px; }
+  .page-log .quote-line { max-width: 860px; }
+  .archive-entry { min-height: 82px; padding-left: 20px; }
+  .archive-entry:after { top: 36px; right: 24px; }
+  .archive-entry h3 { font-size: 22px; }
+  .cycle-record, .page-arrival-sector .article, .page-unknown-structure .article { max-width: 800px; }
+  .glossary-entry h2 { font-size: 22px; margin-bottom: 10px; }
+  .glossary-entry p { font-size: 15px; line-height: 1.6; }
+  .page-structures .card { padding: 26px; }
+  .page-structures .card h3 { font-size: 23px; margin: 12px 0; }
+  .page-structures .card p { font-size: 15px; }
+}
+
+/* Home: live cycle subtitle and three catalogue counters. */
+.page-index .metrics-compact { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+
+/* Home invitation: preview until the official X account is available. */
+.page-index .home-hero { margin-bottom: 0; }
+.game-shortcut { display: inline-flex; align-items: center; gap: 7px; color: #a8bdc7; font-size: 11px; line-height: 1.3; white-space: nowrap; }
+.game-shortcut > span:first-child { font-size: 20px; }
+.game-shortcut small { display: block; font-size: 9px; color: #8aa6b4; }
+.mission-invite { display: flex; flex-direction: column; gap: 20px; position: relative; margin: 0 0 24px; padding: 23px 20px; border: 1px solid #64504c; border-top: 2px solid #bd7463; border-radius: 0 0 8px 8px; background: linear-gradient(110deg, #231d20, #0b171e 75%); }
+.mission-invite-kicker { color: #e0a18f; font-size: 10px; letter-spacing: .15em; text-transform: uppercase; }
+.mission-invite h1 { margin: 8px 0 10px; font-size: clamp(23px, 3vw, 30px); font-weight: 400; line-height: 1.15; letter-spacing: .025em; }
+.mission-invite p { max-width: 530px; margin: 0; color: #b9cbd3; font-size: 13px; line-height: 1.6; }
+.mission-invite-action { display: flex; flex-direction: column; gap: 9px; flex-shrink: 0; }
+.mission-game-button { display: inline-flex; justify-content: center; align-items: center; gap: 10px; min-height: 46px; padding: 12px 17px; border: 1px solid #ae8175; border-radius: 6px; background: #62463f; color: #f5e4de; font: inherit; font-size: 13px; }
+.mission-game-button:disabled { opacity: 1; cursor: not-allowed; }
+@media (min-width: 760px) {
+  .mission-invite { flex-direction: row; align-items: center; justify-content: space-between; gap: 28px; padding: 25px 28px; margin-bottom: 28px; }
+  .mission-invite p { font-size: 14px; }
+}
+@media (max-width: 399px) {
+  .page-index .brand-row { column-gap: 6px; }
+  .page-index .brand .brand-sub { font-size: 8px; }
+  .page-index .header-tools { gap: 8px; }
+  .game-shortcut { font-size: 10px; gap: 4px; }
+}
+
+.page-index .current-cycle .ship-title { display: block; }

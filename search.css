@@ -1,0 +1,14 @@
+.wiki-search-form { margin: 0 0 20px; }
+.wiki-search-form label { display: block; margin-bottom: 8px; color: var(--muted); }
+.wiki-search-controls { display: flex; gap: 10px; }
+.wiki-search-controls input { min-width: 0; flex: 1; padding: 12px; border: 1px solid #385866; border-radius: 7px; color: var(--text); background: #0a171d; font: inherit; }
+.wiki-search-controls button { padding: 12px 18px; border: 1px solid #a65147; border-radius: 7px; color: #ef917c; background: #29191b; font: inherit; cursor: pointer; }
+.wiki-search-controls button:focus-visible { outline: 2px solid #b5dce9; outline-offset: 4px; }
+#wiki-search-status { color: var(--muted); overflow-wrap: anywhere; }
+.wiki-results { list-style: none; padding: 0; margin: 20px 0; }
+.wiki-results li { padding: 18px 0; border-top: 1px solid var(--line); overflow-wrap: anywhere; }
+.wiki-results h2 { margin: 5px 0 8px; font-size: 21px; font-weight: 400; }
+.wiki-results h2 a { color: var(--signal); }
+.wiki-results h2 a:hover { text-decoration: underline; }
+.wiki-results p { margin: 0; color: #b9cbd3; line-height: 1.55; }
+.search-category { font-size: 12px; color: var(--muted); letter-spacing: .06em; text-transform: uppercase; }

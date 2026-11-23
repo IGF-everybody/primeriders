@@ -1,0 +1,23 @@
+# Local snapshots; keep the current site files and assets tracked.
+/backup-before-*/
+/_unreleased/
+/dist/
+/prime-raiders-public.zip
+
+# Operating system metadata
+Thumbs.db
+Desktop.ini
+.DS_Store
+
+# Local editor files and temporary files
+/.idea/
+/.vscode/
+*.tmp
+*.swp
+*~
+__pycache__/
+
+# Local environment configuration
+.env
+.env.*
+!.env.example
